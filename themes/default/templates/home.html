@@ -1,10 +1,43 @@
-{% extends "partials/_base.html" %} {% block body %}
-<pre>
-Theme Information:
-------------------
-Name: {{ THEME_CONFIG.name }}
-Description: {{ THEME_CONFIG.description }}
-Version: {{ THEME_CONFIG.version }}
-Author: {{ THEME_CONFIG.author }}
-</pre>
+{% extends "layout.html" %} {% block title %}Eda - The Alternative GitHub Frontend!{% endblock title %}{% block body %}
+<!-- Side Navbar + Side Profile Bar + Content Layout -->
+
+<section class="flex h-screen">
+    <!-- Side Navbar -->
+    <div class="w-64 bg-gray-800 text-white">
+        <div class="flex items-center justify-center h-14 bg-gray-900">
+            <h1 class="text-2xl">Eda</h1>
+        </div>
+        <nav class="mt-10">
+            <a href="#" class="block py-2 px-4 hover:bg-gray-900">Home Page</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-900">Repositories</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-900">Issues</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-900">Pull Requests</a>
+        </nav>
+    </div>
+    <!-- Side Profile Bar -->
+    <div class="w-64 bg-gray-900 text-white">
+        <div class="flex items-center justify-center h-14 bg-gray-800">
+            <h1 class="text-2xl">Profile</h1>
+        </div>
+        <div class="flex flex-col items-center mt-10">
+            <img src="https://avatars.githubusercontent.com/u/1" alt="Profile Picture" class="w-20 h-20 rounded-full" />
+            <h2 class="mt-2">Linus Torvalds</h2>
+            <p class="mt-1">
+                <a href="#" class="text-blue-400">View Profile</a>
+            </p>
+        </div>
+    </div>
+    <!-- Content Layout -->
+    <div class="flex-1 bg-gray-100 p-10">
+        <h1 class="text-2xl">Home Page</h1>
+        <p class="mt-4">Welcome to Eda - The Alternative GitHub Frontend!</p>
+    </div>
+</section>
+
+
+
+
+
+
+
 {% endblock body %}

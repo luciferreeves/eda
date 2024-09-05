@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from eda.theme_loader import render
 
 
 # Create your views here.

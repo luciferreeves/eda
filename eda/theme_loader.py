@@ -3,6 +3,9 @@ from django.template import Origin
 from django.template.loaders.filesystem import Loader as FileSystemLoader
 from django.contrib.staticfiles.finders import FileSystemFinder
 from django.conf import settings
+from django.shortcuts import render as renderer
+from django.http import HttpResponseNotFound
+from django.template.exceptions import TemplateDoesNotExist
 import os
 
 
@@ -44,3 +47,10 @@ def get_theme_config():
         "version": config.get("theme", "version", fallback="0.0.1"),
         "author": config.get("theme", "author", fallback="Unknown Author"),
     }
+
+
+def render(*args, **kwargs):
+    try:
+        return renderer(*args, **kwargs)
+    except TemplateDoesNotExist:
+        return HttpResponseNotFound("Theme Misconfigured or Missing")

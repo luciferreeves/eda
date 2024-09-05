@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+import sys
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +28,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-m*hhx4ou-#&mund=@d-sz4q774v5pnnk+thc40p80sjr&3@9#g"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = []
 
 # Current active theme: Install theme to themes/ first before changing this
-ACTIVE_THEME = "default"
+ACTIVE_THEME = os.getenv("ACTIVE_THEME", "default")
+
+# Github Token with Full Access: Server stops if not set
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+if GITHUB_TOKEN is None:
+    print("Error: GITHUB_TOKEN is not set")
+    sys.exit(1)
 
 # Application definition
 
@@ -58,7 +68,7 @@ ROOT_URLCONF = "eda.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "themes"],
         "OPTIONS": {
             "loaders": [
                 "eda.theme_loader.ThemeLoader",
