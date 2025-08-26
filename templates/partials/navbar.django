@@ -1,0 +1,9 @@
+<nav>
+  <div class="nav-left">
+    <a href="/" class="nav-title">★彡 Eda 彡★</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="/help">Help</a>
+  </div>
+</nav>

@@ -9,8 +9,11 @@
     {% endblock %}
   </head>
   <body>
+    {% include 'partials/navbar.django' %}
     <main>
-      <aside class="sidebar"></aside>
+      <aside class="sidebar">
+        {% include 'partials/sidebar.django' %}
+      </aside>
       <section class="content">
         {% block content %}
 
