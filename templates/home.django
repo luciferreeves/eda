@@ -1,0 +1,4 @@
+{% extends 'layouts/main.django' %}
+{% block content %}
+  <h1>Welcome to Eda</h1>
+{% endblock %}

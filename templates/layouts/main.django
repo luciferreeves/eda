@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ Title }} - Eda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}
+
+    {% endblock %}
+  </head>
+  <body>
+    <main>
+      <aside class="sidebar"></aside>
+      <section class="content">
+        {% block content %}
+
+        {% endblock %}
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Eda. Eda is an <a href="https://github.com/luciferreeves/eda" target="_blank" rel="noopener noreferrer">open-source</a> alternative <a href="https://www.github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> frontend created by <a href="https://shi.foo" target="_blank" rel="noopener noreferrer">@luciferreeves</a>. All rights reserved.
+      </p>
+    </footer>
+  </body>
+  {% block scripts %}
+
+  {% endblock %}
+</html>
